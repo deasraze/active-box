@@ -40,6 +40,18 @@ body > svg {
     height: 100px;
     position: absolute;
     z-index: 1000;
+    transition: all .3s linear;
+}
+
+.header.fixed {
+    position: fixed;
+    height: auto;
+    background: #2f324d;
+}
+
+.header.fixed .header__inner {
+    padding: 15px 0;
+    border-bottom: 0;
 }
 
 .header__inner {
@@ -360,6 +372,14 @@ body > svg {
     background: #533549;
 }
 
+.reviews__slider {
+    height: 500px;
+}
+
+.reviews__slider.slick-initialized {
+    height: auto;
+}
+
 .reviews__item {
     display: flex;
     flex-wrap: wrap;
@@ -398,6 +418,53 @@ body > svg {
     font-size: 13px;
     font-weight: 700;
     text-transform: uppercase;
+}
+
+/* Slick Slider */
+.slick-slide {
+    outline: none;
+}
+
+.slick-list {
+    overflow: unset;
+}
+
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    padding: 0 0 15px;
+    margin: 0;
+    list-style: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.slick-dots li {
+    margin: 0 5px;
+}
+
+.slick-dots button {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    background: #fff;
+    opacity: .5;
+    border-radius: 50%;
+    border: 0;
+    cursor: pointer;
+    font-size: 0;
+    color: transparent;
+}
+
+.slick-dots button:focus {
+    outline: none;
+}
+
+.slick-dots .slick-active button {
+    opacity: 1;
 }
 
 /* Download */
@@ -495,11 +562,27 @@ body > svg {
     /* Nav */
     .nav {
         display: none;
+        flex-direction: column;
+        background: #2f324d;
+        position: absolute;
+        text-align: center;
+        right: 0;
+        top: 100%;
     }
 
+    .nav.show {
+        display: flex;
+        box-shadow: -2px 5px 10px rgba(0, 0, 0, .5);
+    }
+
+    .nav__link {
+        padding: 9px 25px;
+        margin-left: 0;
+    }
     /* Burger */
     .burger {
         display: block;
+        outline: none;
     }
 
     /* Intro */
@@ -539,6 +622,14 @@ body > svg {
     .reviews__content {
         width: 100%;
         padding: 20px 20px;
+    }
+
+    /* Slick Slider */
+    .slick-dots {
+        width: 100%;
+        position: static;
+        bottom: unset;
+        right: unset;
     }
 }
 
